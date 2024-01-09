@@ -43,7 +43,7 @@
         </div>
     </div>
 </x-app-layout>
-
+h1
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -69,7 +69,7 @@
     </div>
     </div>
   </div>
-  
+
 
 <script>
     $(document).ready(function() {
