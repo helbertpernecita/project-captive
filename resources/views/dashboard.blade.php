@@ -4,47 +4,51 @@
             {{ __('BANK LIST') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @php
-                $clients = App\Models\Client::all();
-            @endphp
-            <div class="table table-responsive">
-                <table class="table table-sm table-bordered" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Bank Name</th>
-                            <th>Code</th>
-                            <th>Branch</th>
-                            <th>Address</th>
-                            <th class="text-center" width="10%">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($clients as $client)
-                            <tr class="data-row">
-                                <td class="pl-3 account-name">{{ $client->name }}</td>
-                                <td class="pl-3">{{ $client->code }}</td>
-                                <td class="pl-3">{{ $client->branch }}</td>
-                                <td class="pl-3">{{ $client->address }}</td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-start">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-sm mx-1 editAccountBtn"><i class="fas fa-plus text-success"></i></button>
-                                        <a href="#" class="btn btn-sm mx-1"><i class="fas fa-eye text-primary"></i></a>
-                                        <a href="#" class="btn btn-sm mx-1"><i class="fas fa-trash text-danger"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    @php
+                        $clients = App\Models\Client::all();
+                    @endphp
+                    <div class="table table-responsive">
+                        <table class="table table-sm table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Bank Name</th>
+                                    <th>Code</th>
+                                    <th>Branch</th>
+                                    <th>Address</th>
+                                    <th class="text-center" width="10%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($clients as $client)
+                                    <tr class="data-row">
+                                        <td class="pl-3 account-name">{{ $client->name }}</td>
+                                        <td class="pl-3">{{ $client->code }}</td>
+                                        <td class="pl-3">{{ $client->branch }}</td>
+                                        <td class="pl-3">{{ $client->address }}</td>
+                                        <td class="text-center">
+                                            <div class="d-flex justify-content-start">
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-sm mx-1 editAccountBtn"><i class="fas fa-plus text-success"></i></button>
+                                                <a href="{{ route('china_banks.index') }}" class="btn btn-sm mx-1"><i class="fas fa-eye text-primary"></i></a>
+                                                <a href="#" class="btn btn-sm mx-1"><i class="fas fa-trash text-danger"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </x-app-layout>
-h1
 <!-- Modal -->
+
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -52,7 +56,7 @@ h1
           <h5 class="modal-title" id="exampleModalLabel">Process docs for <strong id="modal-account-name" class="text-primary text-uppercase"></strong></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="#" method="post">
+        <form action="{{ route('china_banks.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="modal-body">
                 <div class="row">
@@ -63,7 +67,7 @@ h1
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-primary">Process</button>
+                <button type="submit" class="btn btn-outline-primary">Process</button>
             </div>
         </form>
     </div>
