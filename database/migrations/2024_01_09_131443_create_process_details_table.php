@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('process_details', function (Blueprint $table) {
             $table->id();
+            $table->string('check_type')->nullable();
+            $table->string('rt_number');
+            $table->string('account_number');
+            $table->string('account_name');
+            $table->string('contcode')->nullable();
+            $table->string('form_type');
+            $table->string('quantity');
+            $table->unsignedBigInteger('process_id');
+            $table->foreign('process_id')->references('id')->on('processes')->cascadeOnUpdate()->restrictOnDelete();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });
     }

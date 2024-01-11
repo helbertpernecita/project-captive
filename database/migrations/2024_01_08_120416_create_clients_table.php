@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('code');
-            $table->string('branch');
-            $table->string('address');
-            $table->unsignedBigInteger('user_id');
+            $table->string('code')->nullable();
+            $table->string('brstn');
+            $table->string('branch')->nullable();
+            $table->string('address')->nullable();
+            $table->string('address1')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });

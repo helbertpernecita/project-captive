@@ -1,0 +1,20 @@
+
+Page No. 1
+01/02/2024
+                      CBC - Summary of RT nos / # of Books
+
+ACCTNO       QTY ACCOUNT NAME
+
+** CHECK TYPE/BRSTN/BRANCH--> A/010100152/SUN VALLEY BRANCH
+123456789123     5 HAZEL ESTORES IGNACIO
+
+
+** Sub Total ** 5
+
+** CHECK TYPE/BRSTN/BRANCH--> B/010100152/SUN VALLEY BRANCH
+987654321987     5 BENILDA ROSARIO
+
+
+** Sub Total ** 5
+
+* * * Grand Total * * * : 10

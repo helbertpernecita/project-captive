@@ -1,0 +1,20 @@
+
+Page No. 1
+01/02/2024
+                           CAPTIVE PRINTING CORPORATION
+                        CBC - Personal (A) Checks Summary
+                         PreEncoded
+
+ACCT_NO      QTY      ACCOUNT NAME                    START #     END #
+
+
+** ORDERS OF BRSTN/BRANCH --> 010100152/SUN VALLEY BRANCH
+
+* BATCH #: 01022024
+123456789123    1 A    HAZEL ESTORES IGNACIO				     1000251     1000300
+123456789123    1 A    HAZEL ESTORES IGNACIO				     1000301     1000350
+123456789123    1 A    HAZEL ESTORES IGNACIO				     1000351     1000400
+123456789123    1 A    HAZEL ESTORES IGNACIO				     1000401     1000450
+123456789123    1 A    HAZEL ESTORES IGNACIO				     1000451     1000500
+
+** Sub Total ** 5

@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('processes', function (Blueprint $table) {
             $table->id();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+            $table->date('delivery_date')->nullable();
+            $table->boolean('isProcessed');
+            $table->string('batch');
+            $table->string('final_batch')->nullable();
+            $table->string('brstn');
+            $table->string('file_name')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->restrictOnDelete();
+            $table->unsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients')->cascadeOnUpdate()->restrictOnDelete();
             $table->timestamps();
         });
     }

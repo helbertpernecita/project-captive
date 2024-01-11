@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\ChinaBankProcessController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Process\ProcessController;
+use App\Http\Controllers\ChinaBankProcessController;
+use App\Http\Controllers\Process\ProcessDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +36,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/china-banks-process', 'getProcesses')->name('china_banks.process');
         Route::get('/china-banks-create-process', 'createProcesses')->name('china_banks.create_process');
     });
+
+    Route::resource('/processes', ProcessController::class);
+    Route::resource('/process_details', ProcessDetailController::class);
+    Route::resource('/clients', ClientController::class);
+
 });
 
 require __DIR__.'/auth.php';
